@@ -10,3 +10,42 @@ You should return all people fields where their age is over 50 and order by the 
 
 Solution:
 SELECT * FROM people WHERE age > 50 ORDER BY age DESC;
+
+2. Messi goals function
+
+Messi is a soccer player with goals in three leagues:
+
+    LaLiga
+    Copa del Rey
+    Champions
+
+Complete the function to return his total number of goals in all three leagues.
+
+Note: 
+the input will always be valid.
+the result must return the total of goals for each row.
+
+For example:
+
+row1 5, 10, 2  -->  17
+row2 0,0,1 --> 1
+
+Solution:
+
+This is only my model used to get the final solution:
+
+create TABLE goles(
+  la_liga_goals int,
+  copa_del_rey_goals,
+  champions_league_goals
+ 
+);
+
+INSERT into goles('la_liga_goals','copa_del_rey_goals','champions_league_goals')  VALUES (0,0,0);
+INSERT into goles('la_liga_goals','copa_del_rey_goals','champions_league_goals')  VALUES (43,10,5);
+
+query:
+SELECT 
+	(la_liga_goals+ copa_del_rey_goals+champions_league_goals) as "res"
+FROM goals;
+
